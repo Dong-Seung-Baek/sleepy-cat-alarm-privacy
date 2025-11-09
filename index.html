@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleepy Cat Alarm - 개인정보처리방침</title>
+    <title>Sleepy Cat Alarm - Privacy Policy / 개인정보처리방침</title>
     <style>
         * {
             margin: 0;
@@ -26,6 +26,42 @@
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .lang-btn {
+            padding: 12px 24px;
+            border: 2px solid #CC785C;
+            background: white;
+            color: #CC785C;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            background: #F4EDE4;
+        }
+        
+        .lang-btn.active {
+            background: #CC785C;
+            color: white;
+        }
+        
+        .content {
+            display: none;
+        }
+        
+        .content.active {
+            display: block;
         }
         
         h1 {
@@ -82,101 +118,323 @@
             text-align: center;
             margin-bottom: 20px;
         }
+        
+        .important-note {
+            background: #FFF9E6;
+            border-left: 4px solid #FFA500;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="emoji">🐱💤</div>
         
-        <h1>Sleepy Cat Alarm 개인정보처리방침</h1>
-        
-        <div class="app-info">
-            <p><strong>앱 이름:</strong> Sleepy Cat Alarm (잠자는 고양이 알람)</p>
-            <p><strong>개발자:</strong> [귀하의 이름 또는 회사명]</p>
-            <p><strong>최종 수정일:</strong> 2025년 1월 20일</p>
+        <!-- 언어 선택 버튼 -->
+        <div class="language-switcher">
+            <button class="lang-btn active" onclick="switchLanguage('ko')">한국어 🇰🇷</button>
+            <button class="lang-btn" onclick="switchLanguage('en')">English 🇺🇸</button>
         </div>
 
-        <h2>1. 개인정보의 수집 및 이용</h2>
-        <p>Sleepy Cat Alarm은 사용자의 개인정보를 수집하지 않습니다.</p>
+        <!-- 한국어 버전 -->
+        <div id="content-ko" class="content active">
+            <h1>Sleepy Cat Alarm 개인정보처리방침</h1>
+            
+            <div class="app-info">
+                <p><strong>앱 이름:</strong> Sleepy Cat Alarm (잠자는 고양이 알람)</p>
+                <p><strong>개발자:</strong> DongSeung Baek</p>
+                <p><strong>이메일:</strong> baek9800@gmail.com</p>
+                <p><strong>최종 수정일:</strong> 2025년 1월 9일</p>
+            </div>
 
-        <h3>1.1 수집하지 않는 정보</h3>
-        <ul>
-            <li>이름, 이메일, 전화번호 등 개인 식별 정보</li>
-            <li>위치 정보</li>
-            <li>연락처</li>
-            <li>사진, 파일 등 미디어 정보</li>
-        </ul>
+            <h2>1. 개인정보의 수집 및 이용</h2>
+            <p>Sleepy Cat Alarm은 사용자의 개인정보를 수집하지 않습니다.</p>
 
-        <h3>1.2 로컬 저장 데이터</h3>
-        <p>다음 데이터는 사용자의 기기에만 저장되며, 외부로 전송되지 않습니다:</p>
-        <ul>
-            <li>알람 설정 정보 (시간, 라벨, 활성화 상태)</li>
-            <li>고양이 수면 기록 (수면 시작/종료 시간, 방해 횟수)</li>
-            <li>앱 설정 및 테마 정보</li>
-        </ul>
+            <h3>1.1 수집하지 않는 정보</h3>
+            <ul>
+                <li>이름, 이메일, 전화번호 등 개인 식별 정보</li>
+                <li>위치 정보</li>
+                <li>연락처</li>
+                <li>사진, 파일 등 미디어 정보</li>
+                <li>전화 상태 정보</li>
+                <li>음성 녹음</li>
+            </ul>
 
-        <h2>2. 권한 사용 목적</h2>
-        <p>본 앱은 다음 권한을 사용합니다:</p>
+            <h3>1.2 로컬 저장 데이터</h3>
+            <p>다음 데이터는 사용자의 기기에만 저장되며, 외부로 전송되지 않습니다:</p>
+            <ul>
+                <li>알람 설정 정보 (시간, 라벨, 활성화 상태)</li>
+                <li>고양이 수면 기록 (수면 시작/종료 시간, 방해 횟수)</li>
+                <li>앱 설정 및 테마 정보</li>
+            </ul>
 
-        <h3>2.1 필수 권한</h3>
-        <ul>
-            <li><strong>알림 (NOTIFICATIONS):</strong> 설정한 시간에 알람 알림을 표시하기 위해 사용</li>
-            <li><strong>전체 화면 알림 (USE_FULL_SCREEN_INTENT):</strong> 알람 시간에 전체 화면 알람을 표시하기 위해 사용</li>
-            <li><strong>화면 켜기 (WAKE_LOCK):</strong> 알람 발동 시 화면을 자동으로 켜기 위해 사용</li>
-            <li><strong>진동 (VIBRATE):</strong> 알람 발동 시 진동 기능을 제공하기 위해 사용</li>
-        </ul>
+            <h2>2. 권한 사용 목적</h2>
+            <p>본 앱은 알람 기능 제공을 위해 다음 권한을 사용합니다:</p>
 
-        <h3>2.2 선택 권한</h3>
-        <ul>
-            <li>현재 없음</li>
-        </ul>
+            <h3>2.1 필수 권한</h3>
+            <ul>
+                <li><strong>알림 (POST_NOTIFICATIONS):</strong> 설정한 시간에 알람 알림을 표시하기 위해 사용</li>
+                <li><strong>전체 화면 알림 (USE_FULL_SCREEN_INTENT):</strong> 알람 시간에 전체 화면 알람을 표시하기 위해 사용</li>
+                <li><strong>다른 앱 위에 표시 (SYSTEM_ALERT_WINDOW):</strong> 백그라운드에서 알람 화면을 표시하기 위해 사용</li>
+                <li><strong>화면 켜기 (WAKE_LOCK, TURN_SCREEN_ON):</strong> 알람 발동 시 화면을 자동으로 켜기 위해 사용</li>
+                <li><strong>잠금 화면 무시 (DISABLE_KEYGUARD):</strong> 잠금 화면 위에 알람을 표시하기 위해 사용</li>
+                <li><strong>정확한 알람 예약 (SCHEDULE_EXACT_ALARM, USE_EXACT_ALARM):</strong> 정확한 시간에 알람이 울리도록 하기 위해 사용</li>
+                <li><strong>진동 (VIBRATE):</strong> 알람 발동 시 진동 기능을 제공하기 위해 사용</li>
+                <li><strong>부팅 완료 수신 (RECEIVE_BOOT_COMPLETED):</strong> 기기 재부팅 후에도 알람이 작동하도록 하기 위해 사용</li>
+                <li><strong>오디오 설정 변경 (MODIFY_AUDIO_SETTINGS):</strong> 알람 소리 볼륨을 조절하기 위해 사용</li>
+                <li><strong>포그라운드 서비스 (FOREGROUND_SERVICE, FOREGROUND_SERVICE_SPECIAL_USE):</strong> 백그라운드에서 알람 서비스가 안정적으로 작동하도록 보장하기 위해 사용</li>
+            </ul>
 
-        <h2>3. 데이터 저장 및 보안</h2>
-        <ul>
-            <li>모든 데이터는 사용자의 기기 내부에만 저장됩니다 (AsyncStorage 사용)</li>
-            <li>개발자는 사용자의 데이터에 접근할 수 없습니다</li>
-            <li>앱 삭제 시 모든 데이터가 함께 삭제됩니다</li>
-            <li>외부 서버로 데이터를 전송하지 않습니다</li>
-        </ul>
+            <h3>2.2 선택 권한</h3>
+            <ul>
+                <li><strong>배터리 최적화 예외 (REQUEST_IGNORE_BATTERY_OPTIMIZATIONS):</strong> 백그라운드에서 알람이 안정적으로 작동하도록 요청 (사용자 선택 사항)</li>
+            </ul>
 
-        <h2>4. 제3자 제공 및 공유</h2>
-        <p>본 앱은 사용자의 개인정보를 제3자에게 제공하거나 공유하지 않습니다.</p>
+            <div class="important-note">
+                <strong>⚠️ 중요:</strong> 위 권한들은 모두 알람 기능을 제공하기 위한 목적으로만 사용되며, 
+                사용자의 개인정보를 수집하거나 외부로 전송하는 데에는 절대 사용되지 않습니다.
+            </div>
 
-        <h3>4.1 사용하지 않는 서비스</h3>
-        <ul>
-            <li>광고 서비스</li>
-            <li>분석 도구 (Google Analytics 등)</li>
-            <li>소셜 미디어 연동</li>
-            <li>클라우드 백업</li>
-        </ul>
+            <h2>3. 광고 서비스</h2>
+            <p>본 앱은 배너 광고를 표시하기 위해 Google AdMob을 사용합니다.</p>
 
-        <h2>5. 아동의 개인정보 보호</h2>
-        <p>본 앱은 만 13세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 
-        본 앱은 개인정보를 수집하지 않으므로, 모든 연령대의 사용자가 안전하게 사용할 수 있습니다.</p>
+            <h3>3.1 Google AdMob</h3>
+            <ul>
+                <li><strong>제공업체:</strong> Google LLC</li>
+                <li><strong>수집 정보:</strong> Google AdMob은 광고 게재를 위해 광고 ID, IP 주소, 기기 정보 등을 수집할 수 있습니다</li>
+                <li><strong>개인정보처리방침:</strong> <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                <li><strong>맞춤 광고 설정:</strong> 사용자는 기기 설정에서 광고 ID를 재설정하거나 맞춤 광고를 거부할 수 있습니다
+                    <ul>
+                        <li>Android: 설정 > Google > 광고 > 광고 맞춤설정 선택 해제</li>
+                    </ul>
+                </li>
+            </ul>
 
-        <h2>6. 사용자의 권리</h2>
-        <p>사용자는 다음 권리를 가집니다:</p>
-        <ul>
-            <li>앱 내 설정에서 알람 데이터 삭제</li>
-            <li>앱 삭제를 통한 모든 데이터 제거</li>
-            <li>언제든지 알림 권한 거부 (설정 > 앱 > Sleepy Cat Alarm > 권한)</li>
-        </ul>
+            <div class="important-note">
+                <strong>📢 알림:</strong> 광고 관련 데이터는 본 앱이 직접 수집하지 않으며, 
+                Google AdMob의 정책에 따라 처리됩니다. 광고 관련 자세한 내용은 Google의 개인정보처리방침을 참조해주세요.
+            </div>
 
-        <h2>7. 개인정보처리방침 변경</h2>
-        <p>본 개인정보처리방침은 법령 및 서비스 변경에 따라 수정될 수 있습니다. 
-        변경 시 앱 업데이트 공지 또는 본 페이지를 통해 안내됩니다.</p>
+            <h2>4. 데이터 저장 및 보안</h2>
+            <ul>
+                <li>모든 앱 데이터는 사용자의 기기 내부에만 저장됩니다 (AsyncStorage 사용)</li>
+                <li>개발자는 사용자의 데이터에 접근할 수 없습니다</li>
+                <li>앱 삭제 시 모든 데이터가 함께 삭제됩니다</li>
+                <li>외부 서버로 데이터를 전송하지 않습니다 (광고 서비스 제외)</li>
+            </ul>
 
-        <h2>8. 문의</h2>
-        <p>개인정보처리방침에 대한 문의사항이 있으시면 아래로 연락주시기 바랍니다:</p>
-        <ul>
-            <li><strong>이메일:</strong> [귀하의 이메일]</li>
-            <li><strong>개발자:</strong> [귀하의 이름]</li>
-        </ul>
+            <h2>5. 제3자 제공 및 공유</h2>
+            <p>본 앱은 사용자의 개인정보를 제3자에게 제공하거나 공유하지 않습니다.</p>
 
-        <div class="footer">
-            <p>본 개인정보처리방침은 2025년 1월 20일부터 적용됩니다.</p>
-            <p>© 2025 Sleepy Cat Alarm. All rights reserved.</p>
+            <h3>5.1 사용하는 제3자 서비스</h3>
+            <ul>
+                <li><strong>Google AdMob:</strong> 배너 광고 게재 (위 "3. 광고 서비스" 참조)</li>
+            </ul>
+
+            <h3>5.2 사용하지 않는 서비스</h3>
+            <ul>
+                <li>분석 도구 (Google Analytics 등)</li>
+                <li>소셜 미디어 연동</li>
+                <li>클라우드 백업</li>
+                <li>위치 추적 서비스</li>
+            </ul>
+
+            <h2>6. 아동의 개인정보 보호</h2>
+            <p>본 앱은 만 13세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 
+            본 앱은 개인정보를 직접 수집하지 않으므로, 모든 연령대의 사용자가 안전하게 사용할 수 있습니다.</p>
+            <p>다만, 광고 서비스(Google AdMob)는 연령에 따라 광고 내용이 조정될 수 있습니다.</p>
+
+            <h2>7. 사용자의 권리</h2>
+            <p>사용자는 다음 권리를 가집니다:</p>
+            <ul>
+                <li>앱 내 설정에서 알람 데이터 삭제</li>
+                <li>앱 삭제를 통한 모든 데이터 제거</li>
+                <li>언제든지 알림 권한 거부 (설정 > 앱 > Sleepy Cat Alarm > 권한)</li>
+                <li>다른 앱 위에 표시 권한 거부 (설정 > 앱 > Sleepy Cat Alarm > 다른 앱 위에 표시)</li>
+                <li>배터리 최적화 예외 취소 (설정 > 배터리 > 배터리 최적화 > Sleepy Cat Alarm)</li>
+                <li>광고 맞춤설정 거부 (설정 > Google > 광고)</li>
+            </ul>
+
+            <h2>8. 개인정보처리방침 변경</h2>
+            <p>본 개인정보처리방침은 법령 및 서비스 변경에 따라 수정될 수 있습니다. 
+            변경 시 앱 업데이트 공지 또는 본 페이지를 통해 안내됩니다.</p>
+
+            <h2>9. 문의</h2>
+            <p>개인정보처리방침에 대한 문의사항이 있으시면 아래로 연락주시기 바랍니다:</p>
+            <ul>
+                <li><strong>개발자:</strong> DongSeung Baek</li>
+                <li><strong>이메일:</strong> baek9800@gmail.com</li>
+            </ul>
+
+            <div class="footer">
+                <p>본 개인정보처리방침은 2025년 1월 9일부터 적용됩니다.</p>
+                <p>© 2025 Sleepy Cat Alarm. All rights reserved.</p>
+            </div>
+        </div>
+
+        <!-- 영어 버전 -->
+        <div id="content-en" class="content">
+            <h1>Sleepy Cat Alarm Privacy Policy</h1>
+            
+            <div class="app-info">
+                <p><strong>App Name:</strong> Sleepy Cat Alarm</p>
+                <p><strong>Developer:</strong> DongSeung Baek</p>
+                <p><strong>Email:</strong> baek9800@gmail.com</p>
+                <p><strong>Last Updated:</strong> January 9, 2025</p>
+            </div>
+
+            <h2>1. Collection and Use of Personal Information</h2>
+            <p>Sleepy Cat Alarm does not collect any personal information from users.</p>
+
+            <h3>1.1 Information NOT Collected</h3>
+            <ul>
+                <li>Personal identifiable information such as name, email, phone number</li>
+                <li>Location information</li>
+                <li>Contacts</li>
+                <li>Media information such as photos and files</li>
+                <li>Phone state information</li>
+                <li>Audio recording</li>
+            </ul>
+
+            <h3>1.2 Local Storage Data</h3>
+            <p>The following data is stored only on your device and is never transmitted externally:</p>
+            <ul>
+                <li>Alarm settings (time, label, enabled status)</li>
+                <li>Cat sleep records (sleep start/end time, interruption count)</li>
+                <li>App settings and theme preferences</li>
+            </ul>
+
+            <h2>2. Permissions Usage</h2>
+            <p>This app uses the following permissions to provide alarm functionality:</p>
+
+            <h3>2.1 Required Permissions</h3>
+            <ul>
+                <li><strong>Notifications (POST_NOTIFICATIONS):</strong> To display alarm notifications at scheduled times</li>
+                <li><strong>Full Screen Intent (USE_FULL_SCREEN_INTENT):</strong> To display full-screen alarm when alarm time arrives</li>
+                <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW):</strong> To show alarm screen even when app is in background</li>
+                <li><strong>Wake Lock (WAKE_LOCK, TURN_SCREEN_ON):</strong> To automatically turn on the screen when alarm fires</li>
+                <li><strong>Disable Keyguard (DISABLE_KEYGUARD):</strong> To display alarm over lock screen</li>
+                <li><strong>Schedule Exact Alarms (SCHEDULE_EXACT_ALARM, USE_EXACT_ALARM):</strong> To ensure alarms fire at precise times</li>
+                <li><strong>Vibrate:</strong> To provide vibration feedback when alarm fires</li>
+                <li><strong>Receive Boot Completed (RECEIVE_BOOT_COMPLETED):</strong> To restore alarms after device reboot</li>
+                <li><strong>Modify Audio Settings (MODIFY_AUDIO_SETTINGS):</strong> To control alarm volume</li>
+                <li><strong>Foreground Service (FOREGROUND_SERVICE, FOREGROUND_SERVICE_SPECIAL_USE):</strong> To ensure alarm service runs reliably in background</li>
+            </ul>
+
+            <h3>2.2 Optional Permissions</h3>
+            <ul>
+                <li><strong>Battery Optimization Exemption (REQUEST_IGNORE_BATTERY_OPTIMIZATIONS):</strong> To request reliable alarm operation in background (user's choice)</li>
+            </ul>
+
+            <div class="important-note">
+                <strong>⚠️ Important:</strong> All the above permissions are used solely to provide alarm functionality and 
+                are NEVER used to collect or transmit user personal information.
+            </div>
+
+            <h2>3. Advertising Services</h2>
+            <p>This app displays banner advertisements using Google AdMob.</p>
+
+            <h3>3.1 Google AdMob</h3>
+            <ul>
+                <li><strong>Provider:</strong> Google LLC</li>
+                <li><strong>Information Collected:</strong> Google AdMob may collect advertising ID, IP address, device information, etc. for ad serving</li>
+                <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                <li><strong>Ad Personalization Settings:</strong> Users can reset advertising ID or opt out of personalized ads in device settings
+                    <ul>
+                        <li>Android: Settings > Google > Ads > Opt out of Ads Personalization</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="important-note">
+                <strong>📢 Notice:</strong> Advertising data is not directly collected by this app and is processed 
+                according to Google AdMob's policies. For more details about advertising, please refer to Google's Privacy Policy.
+            </div>
+
+            <h2>4. Data Storage and Security</h2>
+            <ul>
+                <li>All app data is stored only on your device's internal storage (using AsyncStorage)</li>
+                <li>The developer cannot access your data</li>
+                <li>All data is deleted when you uninstall the app</li>
+                <li>No data is transmitted to external servers (except advertising services)</li>
+            </ul>
+
+            <h2>5. Third-Party Sharing</h2>
+            <p>This app does not provide or share user personal information with third parties.</p>
+
+            <h3>5.1 Third-Party Services Used</h3>
+            <ul>
+                <li><strong>Google AdMob:</strong> For displaying banner advertisements (see "3. Advertising Services" above)</li>
+            </ul>
+
+            <h3>5.2 Services NOT Used</h3>
+            <ul>
+                <li>Analytics tools (e.g., Google Analytics)</li>
+                <li>Social media integration</li>
+                <li>Cloud backup</li>
+                <li>Location tracking services</li>
+            </ul>
+
+            <h2>6. Children's Privacy</h2>
+            <p>This app does not intentionally collect personal information from children under 13 years of age. 
+            Since this app does not directly collect personal information, it can be safely used by users of all ages.</p>
+            <p>However, advertising services (Google AdMob) may adjust ad content based on age.</p>
+
+            <h2>7. User Rights</h2>
+            <p>Users have the following rights:</p>
+            <ul>
+                <li>Delete alarm data within app settings</li>
+                <li>Remove all data by uninstalling the app</li>
+                <li>Deny notification permission at any time (Settings > Apps > Sleepy Cat Alarm > Permissions)</li>
+                <li>Deny display over other apps permission (Settings > Apps > Sleepy Cat Alarm > Display over other apps)</li>
+                <li>Cancel battery optimization exemption (Settings > Battery > Battery optimization > Sleepy Cat Alarm)</li>
+                <li>Opt out of ad personalization (Settings > Google > Ads)</li>
+            </ul>
+
+            <h2>8. Changes to Privacy Policy</h2>
+            <p>This privacy policy may be updated according to legal requirements and service changes. 
+            Changes will be announced through app updates or this page.</p>
+
+            <h2>9. Contact</h2>
+            <p>If you have any questions about this privacy policy, please contact:</p>
+            <ul>
+                <li><strong>Developer:</strong> DongSeung Baek</li>
+                <li><strong>Email:</strong> baek9800@gmail.com</li>
+            </ul>
+
+            <div class="footer">
+                <p>This privacy policy is effective as of January 9, 2025.</p>
+                <p>© 2025 Sleepy Cat Alarm. All rights reserved.</p>
+            </div>
         </div>
     </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // 모든 content 숨기기
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // 모든 버튼 비활성화
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 선택한 언어 표시
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // 선택한 버튼 활성화
+            event.target.classList.add('active');
+            
+            // 페이지 맨 위로 스크롤
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // HTML lang 속성 변경 (SEO)
+            document.documentElement.lang = lang;
+        }
+    </script>
 </body>
 </html>
